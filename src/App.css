@@ -1,38 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+  /* ### Primary */
+
+  --MarineBlue: hsl(213, 96%, 18%);
+  --PurplishBlue: hsl(243, 100%, 62%);
+  --PastelBlue: hsl(228, 100%, 84%);
+  --LightBlue: hsl(206, 94%, 87%);
+  --StrawberryRed: hsl(354, 84%, 57%);
+
+  /* ### Neutral */
+
+  --CoolGray: hsl(231, 11%, 63%);
+  --LightGray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+}
+
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--Magnolia);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.steps-header {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 30px;
+  background: url("./images/bg-sidebar-mobile.svg");
+  background-size: cover;
+  background-position: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.step-header-container {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.step-id {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--White);
+  color: var(--White);
+  border-radius: 50%;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.step-no,
+.step-name {
+  display: none;
+}
+
+.personal-info-container {
+  width: 90%;
+  position: absolute;
+  background-color: var(--White);
+  left: 0;
+  right: 0;
+  top: 15%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 35px 15px 20px 15px;
+  font-family: ubuntu;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px var(--PastelBlue);
+}
+
+.personal-info-header {
+  margin-bottom: 10px;
+  color: var(--MarineBlue);
+}
+
+.info {
+  font-size: 17px;
+  /* letter-spacing: 0.5px; */
+  line-height: 24px;
+  color: var(--CoolGray);
+  margin-bottom: 20px;
+}
+
+.personal-info-container label {
+  font-size: 13px;
+  color: var(--MarineBlue);
+  margin-bottom: 4px;
+}
+
+.personal-info-container input {
+  padding: 8px 12px;
+  font-size: 17px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--LightGray);
+  position: relative;
+  overflow: visible;
+}
+
+.personal-info-container input:focus {
+  outline: 1px solid var(--CoolGray);
+}
+
+.personal-info-container input::placeholder {
+  color: var(--CoolGray);
+  font-weight: 500;
+}
+
+.select-plan-container {
+  position: absolute;
+  width: 90%;
+  background-color: var(--White);
+  left: 0;
+  right: 0;
+  top: 15%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 35px 15px 20px 15px;
+  font-family: ubuntu;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px var(--PastelBlue);
 }
 
-.App-link {
-  color: #61dafb;
+.plan-head {
+  color: var(--MarineBlue);
+  width: 100%;
+  text-align: start;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.plan {
+  width: 90%;
+  border: 1px solid var(--CoolGray);
+  margin: 7px 0;
+  padding: 15px;
+  display: flex;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.plan img {
+  margin-right: 15px;
+}
+
+.name-and-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.plan-name {
+  font-weight: 700;
+  color: var(--MarineBlue);
+  text-transform: capitalize;
+}
+
+.plan-bill {
+  font-size: 14px;
+  color: var(--CoolGray);
+}
+
+.bill-options {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.bill-options .check {
+  width: 40px;
+  height: 20px;
+  background-color: var(--MarineBlue);
+  border-radius: 20px;
+  position: relative;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.bill-options .check .chosen {
+  width: 12px;
+  height: 12px;
+  background-color: var(--White);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 5px;
+  margin: auto 0;
+  transition: all 200ms ease;
+  /* transform: translate(18px); */
+}
+
+.bill {
+  font-weight: 600;
+}
+
+.next-and-back {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--White);
+  padding: 15px;
+}
+
+.next-and-back button {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.next-btn {
+  padding: 10px 15px;
+  background-color: var(--MarineBlue);
+  border: none;
+  color: var(--LightGray);
+  border-radius: 5px;
+  cursor: pointer;
 }
